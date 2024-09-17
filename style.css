@@ -10,7 +10,7 @@ html,
 body {
   width: 100%;
   height: 100%;
-  background: #151515;
+  background: #0b0b0b;
 }
 
 ::-webkit-scrollbar {
@@ -70,15 +70,45 @@ body {
 
 #main {
   position: relative;
-  background: #000;
 }
 .page1 {
   height: 100vh;
   width: 100%;
-  background: #3b0b0b;
+  background: #000;
 }
 .page2 {
   height: 100vh;
   width: 100%;
-  background: #b57878;
+}
+.page2 nav {
+  padding: 6.3vh 4.5vw;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+}
+.page2 nav .nav-left {
+  display: flex;
+  align-items: start;
+  gap: 2.2vw;
+}
+.page2 nav .nav-left img {
+  padding-bottom: 0.8vh;
+}
+.page2 nav .nav-middle {
+  width: 38vw;
+  display: flex;
+  flex-direction: column;
+}
+.page2 nav .nav-middle a {
+  text-decoration: none;
+  font-size: 1vw;
+}
+.page2 nav .nav-right {
+  display: flex;
+  align-items: center;
+  gap: 2.2vw;
+}
+.page2 nav .nav-right a {
+  text-decoration: none;
+  font-size: 1vw;
 }

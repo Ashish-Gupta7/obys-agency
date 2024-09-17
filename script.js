@@ -118,13 +118,15 @@ const gsapLoaderAnim = () => {
           tl.to("#loader", {
             display: "none",
           });
-          tl.from(".page1", {
-            y: "100%",
-            opacity: 0,
+          tl.to(".page1", {
+            y: "-100%",
+            duration: 0.6,
+            display: "none",
+            ease: "power1.in",
           });
         }
       }, 20);
     },
   });
 };
-gsapLoaderAnim();
+// gsapLoaderAnim();
