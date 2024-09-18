@@ -100,6 +100,7 @@ body {
   flex-direction: column;
 }
 .page2 nav .nav-middle a {
+  width: fit-content;
   text-decoration: none;
   font-size: 1vw;
 }
@@ -111,4 +112,102 @@ body {
 .page2 nav .nav-right a {
   text-decoration: none;
   font-size: 1vw;
+}
+
+.page2 .after-nav .center-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: purple;
+}
+.page2 .after-nav .center-content .intro-section {
+  display: flex;
+  align-items: start;
+  padding-top: 8.1vh;
+}
+.page2 .after-nav .center-content .intro-section > span {
+  background: lightcoral;
+  padding-right: 5.4vw;
+  font-size: 3vw;
+  font-family: "Silk Serif";
+}
+.page2 .after-nav .center-content .intro-content {
+  background: peru;
+  line-height: 9.4vh;
+  padding-top: 3vh;
+  padding-right: 5vw;
+}
+.page2 .after-nav .center-content .intro-content span {
+  font-size: 7.2vw;
+  font-family: "Plain Regular";
+  text-transform: uppercase;
+  letter-spacing: -0.2vw;
+}
+.page2 .after-nav .center-content .intro-content .web-design span:nth-child(1) {
+  width: max-content;
+  position: relative;
+}
+.page2 .after-nav .center-content .intro-content .web-design span:nth-child(2) {
+  margin-left: 3vw;
+  position: relative;
+}
+.page2
+  .after-nav
+  .center-content
+  .intro-content
+  .web-design
+  span:nth-child(2):before {
+  content: "/";
+  position: absolute;
+  color: #ffffff;
+  left: -2.6vw;
+}
+.page2
+  .after-nav
+  .center-content
+  .intro-content
+  .web-design
+  span:nth-child(2)::after,
+.page2
+  .after-nav
+  .center-content
+  .intro-content
+  .web-design
+  span:nth-child(1)::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1.2vh;
+  background: #ffffff;
+  left: 0;
+  bottom: 0;
+}
+
+.page2 .scroll-text {
+  height: 20px;
+  overflow: hidden;
+  position: relative;
+}
+.page2 .scroll-text div {
+  position: absolute;
+  color: rgba(128, 128, 128, 0.499);
+  font-weight: 700;
+  font-size: 1vw;
+  width: 100%;
+  left: 4.5vw;
+  animation: scroll-up 2s linear infinite;
+}
+@keyframes scroll-up {
+  0% {
+    top: -100%;
+  }
+  45% {
+    top: 0%;
+  }
+  55% {
+    top: 0%;
+  }
+  100% {
+    top: 100%;
+  }
 }
