@@ -6,40 +6,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Obys Agency Doc</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+  <link rel="stylesheet" href="https://unpkg.com/sheryjs/dist/Shery.css" />
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+  <div id="crsr"></div>
+
   <!-- loader -->
-  <!-- <div id="loader">
-    <div class="line line1">
-      <div id="line1-part1">
-        <h5>00</h5>
-        <h6>- 100</h6>
+  <div id="loader">
+    <div>
+      <div class="line line1">
+        <div id="line1-part1">
+          <h5>00</h5>
+          <h6>- 100</h6>
+        </div>
+        <h1>Your</h1>
       </div>
-      <h1>Your</h1>
+      <div class="line line2">
+        <h1>Web Experiences</h1>
+      </div>
+      <div class="line line3">
+        <h1>
+          <span class="line3-same-anim">is </span>
+          <span>loading</span>
+          <span class="line3-same-anim"> right</span>
+        </h1>
+        <h2 class="now-anim">Now</h2>
+      </div>
     </div>
-    <div class="line line2">
-      <h1>Web Experiences</h1>
-    </div>
-    <div class="line line3">
-      <h1>
-        <span class="line3-same-anim">is </span>
-        <span>loading</span>
-        <span class="line3-same-anim"> right</span>
-      </h1>
-      <h2 class="now-anim">Now</h2>
-    </div>
-  </div> -->
+    <div class="wait-msg">Please wait <br> a few seconds</div>
+  </div>
 
   <!-- main-page -->
+  <!-- loader-effect - after loader move to top(-100%). -->
+  <div class="loader-effect"></div>
+
   <div id="main">
 
-    <!-- page1 - after loader move to top(-100%). -->
-    <!-- <div class="page1"></div> -->
-
-    <!-- page2 - main first page -->
-    <div class="page2">
+    <!-- page1 - main first page -->
+    <div class="page1">
 
       <!-- nav -->
       <nav>
@@ -96,15 +102,15 @@
           <div class="intro-section">
             <span>01</span>
             <div class="intro-content">
-              <span>We design</span>
+              <span class="hero-anim">We design</span>
               <br>
-              <span>unique</span>
+              <span class="hero-anim">unique</span>
               <br>
-              <div class="web-design">
-                <span>web</span>
-                <span>graphic</span>
-              </div>
-              <span>experience</span>
+              <span class="web-design hero-anim">
+                <span>web</span><span>graphic</span>
+              </span>
+              <br>
+              <span class="hero-anim experience">experience</span>
             </div>
           </div>
         </div>
@@ -118,8 +124,7 @@
 
     </div>
 
-    <div class="page3"></div>
-    <div class="page4"></div>
+    <div class="page2"></div>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
@@ -129,6 +134,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
     integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script type="text/javascript" src="https://unpkg.com/sheryjs/dist/Shery.js"></script>
   <script src="script.js"></script>
 </body>
 

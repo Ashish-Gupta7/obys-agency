@@ -1,4 +1,4 @@
-const locomotive = () => {
+function locomotive() {
   const locoScroll = new LocomotiveScroll({
     el: document.querySelector("#main"),
     smooth: true,
@@ -22,10 +22,10 @@ const locomotive = () => {
       ? "transform"
       : "fixed",
   });
-};
+}
 locomotive();
 
-const gsapLoaderAnim = () => {
+function gsapLoaderAnim() {
   const styleTag = document.getElementById("scrollbarStyle");
   var tl = gsap.timeline();
 
@@ -50,6 +50,11 @@ const gsapLoaderAnim = () => {
     },
     "start"
   );
+
+  tl.from(" #loader .wait-msg", {
+    duration: 0.4,
+    opacity: 0,
+  });
 
   tl.from("#loader #line1-part1", {
     opacity: 0,
@@ -83,7 +88,7 @@ const gsapLoaderAnim = () => {
           tl.to(
             "#loader .line3 span:nth-child(2)",
             {
-              opacity: 0.5,
+              opacity: 0.7,
               delay: 0.6,
             },
             "same"
@@ -112,21 +117,86 @@ const gsapLoaderAnim = () => {
             x: 400,
             rotate: "360deg",
           });
-          tl.to("#loader", {
-            opacity: 0,
-          });
+          tl.to(
+            "#loader .wait-msg",
+            {
+              duration: 0.4,
+              opacity: 0,
+            },
+            "back"
+          );
+          tl.to(
+            "#loader",
+            {
+              delay: 0.2,
+              opacity: 0,
+            },
+            "back"
+          );
           tl.to("#loader", {
             display: "none",
           });
-          tl.to(".page1", {
+          tl.to(".loader-effect", {
             y: "-100%",
-            duration: 0.6,
+            duration: 0.4,
             display: "none",
             ease: "power1.in",
           });
+          tl.from(
+            ".page1 .after-nav .center-content .intro-content .hero-anim",
+            {
+              duration: 0.6,
+              y: 100,
+              stagger: 0.4,
+              opacity: 0,
+            }
+          );
+          tl.to("#crsr", {
+            display: "block",
+          });
         }
-      }, 20);
+      }, 0);
     },
   });
-};
-// gsapLoaderAnim();
+}
+gsapLoaderAnim();
+
+function cursorAnim() {
+  const cursor = document.querySelector("#crsr");
+
+  document.addEventListener("mousemove", updateCursorPosition);
+  document.addEventListener("scroll", updateCursorPosition);
+
+  function updateCursorPosition(dets) {
+    // const x = dets.clientX || window.innerWidth / 2;
+    // const y = dets.clientY || window.innerHeight / 2;
+
+    cursor.style.left = dets.x + "px";
+    cursor.style.top = dets.y + "px";
+  }
+
+  const magnetElements = document.querySelectorAll(
+    ".page1 nav .nav-left img, .page1 nav .nav-right a"
+  );
+
+  magnetElements.forEach((el) => {
+    el.addEventListener("mouseenter", () => {
+      gsap.to("#crsr", {
+        width: "4vw",
+        height: "4vw",
+        duration: 0.5,
+      });
+    });
+
+    el.addEventListener("mouseleave", () => {
+      gsap.to("#crsr", {
+        width: "2.5vw",
+        height: "2.5vw",
+        duration: 0.5,
+      });
+    });
+  });
+
+  Shery.makeMagnet(".page1 nav .nav-left img, .page1 nav .nav-right a", {});
+}
+cursorAnim();

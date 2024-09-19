@@ -4,6 +4,7 @@
   box-sizing: border-box;
   font-family: "Plain Light";
   color: white;
+  /* cursor: none; */
 }
 
 html,
@@ -11,6 +12,7 @@ body {
   width: 100%;
   height: 100%;
   background: #0b0b0b;
+  overflow: auto;
 }
 
 ::-webkit-scrollbar {
@@ -67,91 +69,108 @@ body {
   text-transform: uppercase;
   font-weight: 700;
 }
+#loader .wait-msg {
+  margin-left: 20vw;
+  margin-top: 6vh;
+  font-size: 1vw;
+}
+
+#crsr {
+  position: fixed;
+  height: 2.5vw;
+  width: 2.5vw;
+  border: 2px solid #a4a4a4;
+  border-radius: 50%;
+  display: none;
+  z-index: 999999;
+  mix-blend-mode: difference;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
 
 #main {
   position: relative;
 }
-.page1 {
+.loader-effect {
   height: 100vh;
   width: 100%;
   background: #000;
 }
-.page2 {
+.page1 {
   height: 100vh;
   width: 100%;
 }
-.page2 nav {
+.page1 nav {
   padding: 6.3vh 4.5vw;
   display: flex;
   align-items: start;
   justify-content: space-between;
 }
-.page2 nav .nav-left {
+.page1 nav .nav-left {
   display: flex;
   align-items: start;
   gap: 2.2vw;
 }
-.page2 nav .nav-left img {
+.page1 nav .nav-left img {
   padding-bottom: 0.8vh;
 }
-.page2 nav .nav-middle {
+.page1 nav .nav-middle {
   width: 38vw;
   display: flex;
   flex-direction: column;
 }
-.page2 nav .nav-middle a {
+.page1 nav .nav-middle a {
   width: fit-content;
   text-decoration: none;
   font-size: 1vw;
+  cursor: none;
 }
-.page2 nav .nav-right {
+.page1 nav .nav-right {
   display: flex;
   align-items: center;
   gap: 2.2vw;
 }
-.page2 nav .nav-right a {
+.page1 nav .nav-right a {
   text-decoration: none;
   font-size: 1vw;
+  cursor: none;
 }
 
-.page2 .after-nav .center-content {
+.page1 .after-nav .center-content {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: purple;
 }
-.page2 .after-nav .center-content .intro-section {
+.page1 .after-nav .center-content .intro-section {
   display: flex;
   align-items: start;
   padding-top: 8.1vh;
 }
-.page2 .after-nav .center-content .intro-section > span {
-  background: lightcoral;
+.page1 .after-nav .center-content .intro-section > span {
   padding-right: 5.4vw;
   font-size: 3vw;
   font-family: "Silk Serif";
 }
-.page2 .after-nav .center-content .intro-content {
-  background: peru;
-  line-height: 9.4vh;
-  padding-top: 3vh;
-  padding-right: 5vw;
+.page1 .after-nav .center-content .intro-content {
+  line-height: 7vh;
+  padding-top: 3.4vh;
+  padding-right: 4vw;
 }
-.page2 .after-nav .center-content .intro-content span {
+.page1 .after-nav .center-content .intro-content span {
   font-size: 7.2vw;
   font-family: "Plain Regular";
   text-transform: uppercase;
   letter-spacing: -0.2vw;
 }
-.page2 .after-nav .center-content .intro-content .web-design span:nth-child(1) {
+.page1 .after-nav .center-content .intro-content .web-design span:nth-child(1) {
   width: max-content;
   position: relative;
 }
-.page2 .after-nav .center-content .intro-content .web-design span:nth-child(2) {
+.page1 .after-nav .center-content .intro-content .web-design span:nth-child(2) {
   margin-left: 3vw;
   position: relative;
 }
-.page2
+.page1
   .after-nav
   .center-content
   .intro-content
@@ -162,13 +181,13 @@ body {
   color: #ffffff;
   left: -2.6vw;
 }
-.page2
+.page1
   .after-nav
   .center-content
   .intro-content
   .web-design
   span:nth-child(2)::after,
-.page2
+.page1
   .after-nav
   .center-content
   .intro-content
@@ -182,13 +201,16 @@ body {
   left: 0;
   bottom: 0;
 }
+.page1 .after-nav .center-content .intro-content .hero-anim {
+  display: block;
+}
 
-.page2 .scroll-text {
+.page1 .scroll-text {
   height: 20px;
   overflow: hidden;
   position: relative;
 }
-.page2 .scroll-text div {
+.page1 .scroll-text div {
   position: absolute;
   color: rgba(128, 128, 128, 0.499);
   font-weight: 700;
@@ -210,4 +232,10 @@ body {
   100% {
     top: 100%;
   }
+}
+
+.page2 {
+  height: 100vh;
+  width: 100%;
+  background: red;
 }
