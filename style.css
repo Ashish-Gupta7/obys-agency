@@ -233,9 +233,61 @@ body {
     top: 100%;
   }
 }
+.page1
+  .after-nav
+  .center-content
+  .intro-section
+  .intro-content
+  .web-design
+  .wd-text:hover {
+  -webkit-text-stroke: 1px white;
+  color: transparent;
+}
+.page1
+  .after-nav
+  .center-content
+  .intro-section
+  .intro-content
+  .web-design
+  .wd-text:hover::after {
+  opacity: 0;
+}
 
 .page2 {
   height: 100vh;
   width: 100%;
-  background: red;
+  display: flex;
+  justify-content: flex-end;
+}
+.page2 .video-container {
+  position: relative;
+  height: 65vh;
+  width: 71.5vw;
+  top: -3.2vh;
+}
+.page2 .video-container video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.page2 .video-container img {
+  position: absolute;
+  top: -1vh;
+  height: 102%;
+  width: 100%;
+  object-fit: cover;
+}
+.page2 .video-container .play-btn {
+  position: absolute;
+  top: -17%;
+  right: 12vw;
+  z-index: 99;
+  height: 10vw;
+  width: 10vw;
+  font-size: 2.4vw;
+  border-radius: 50%;
+  background: #ffa63d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

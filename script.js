@@ -200,3 +200,25 @@ function cursorAnim() {
   Shery.makeMagnet(".page1 nav .nav-left img, .page1 nav .nav-right a", {});
 }
 cursorAnim();
+
+let video = document.querySelector(".page2 .video-container video");
+let image = document.querySelector(".page2 .video-container img");
+let videoContainer = document.querySelector(".page2 .video-container");
+
+videoContainer.addEventListener("click", function () {
+  if (image.classList.contains("anim")) {
+    video.play();
+    gsap.to(image, {
+      scale: 0,
+      opacity: 0,
+    });
+    image.classList.remove("anim");
+  } else {
+    video.pause();
+    gsap.to(image, {
+      opacity: 1,
+      scale: 1,
+    });
+    image.classList.add("anim");
+  }
+});
