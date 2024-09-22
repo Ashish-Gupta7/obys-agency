@@ -291,3 +291,185 @@ body {
   align-items: center;
   justify-content: center;
 }
+
+/* .page3 {
+  height: 100vh;
+  width: 100%;
+} */
+
+.page4 {
+  height: 90vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.page4 .btn {
+  width: 23vw;
+  height: 23vw;
+  border-radius: 50%;
+  background: #ffa63d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.page4 .btn span {
+  font-family: "Silk Serif";
+  font-size: 1.1vw;
+}
+
+.page5 {
+  width: 100%;
+}
+.page5 .p5-start {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+}
+.page5 .p5-start .p5-left {
+  width: 23vw;
+  text-align: right;
+  font-family: "Silk Serif";
+  font-size: 3.2vw;
+}
+.page5 .p5-start .p5-right {
+  width: calc(100% - 30vw);
+  padding-right: 5vw;
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  gap: 6vh;
+}
+.page5 .p5-start .p5-right .p5-topic {
+  text-transform: uppercase;
+  font-size: 7.4vw;
+  font-weight: 800;
+}
+.page5 .p5-start .p5-right .p5-topic-line {
+  width: 100%;
+  height: 1.5px;
+  background: rgba(255, 255, 255, 0.395);
+}
+.page5 .p5-start .p5-right .p5-intro {
+  font-size: 2.3vw;
+}
+.page5 .p5-start .p5-right .p5-details {
+  width: 100%;
+  position: relative;
+}
+.page5 .p5-start .p5-right .p5-details .p5-img-text {
+  display: flex;
+  align-items: start;
+  gap: 2.2vw;
+}
+.page5 .p5-start .p5-right .p5-details .p5-img-text img {
+  height: 82vh;
+}
+.page5 .p5-start .p5-right .p5-details .p5-img-text .p5-text div {
+  font-size: 1vw;
+  line-height: 3vh;
+}
+.page5 .p5-start .p5-right .p5-details .p5-img-text .p5-text div:nth-child(1) {
+  margin-bottom: 4vh;
+}
+.page5 .p5-start .p5-right .p5-details .p5-awwwards {
+  width: 33.2vw;
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  gap: 4.5vh;
+  position: absolute;
+  right: 12%;
+  bottom: -68%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9vh 0;
+  background: #3f7df4;
+}
+.page5 .p5-start .p5-right .p5-details .p5-awwwards .p5-list {
+  width: 76%;
+}
+.page5 .p5-start .p5-right .p5-details .p5-awwwards .p5-list .p5-awwwards-text {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  margin-bottom: 4.5vh;
+}
+.page5
+  .p5-start
+  .p5-right
+  .p5-details
+  .p5-awwwards
+  .p5-list
+  .p5-awwwards-text
+  .p5-title
+  div:nth-child(1) {
+  font-size: 1.6vw;
+}
+.page5
+  .p5-start
+  .p5-right
+  .p5-details
+  .p5-awwwards
+  .p5-list
+  .p5-awwwards-text
+  .p5-title-des {
+  font-size: 1vw;
+}
+.page5 .p5-start .p5-right .p5-details .p5-awwwards .p5-list .p5-list-line {
+  width: 100%;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.392);
+}
+.page5 .p5-start .p5-right .p5-right-last {
+  width: 100%;
+}
+.page5 .p5-start .p5-right .p5-right-last .line {
+  width: 100%;
+  height: 2px;
+  margin-top: 75vh;
+  background: rgba(255, 255, 255, 0.396);
+}
+.page5 .p5-start .p5-right .p5-right-last .text {
+  font-size: 1vw;
+  margin-top: 4vh;
+}
+
+.page6 {
+  width: 100%;
+  padding: 10vh 0;
+}
+.page6 .p6-elem-1,
+.page6 .p6-elem-2 {
+  white-space: nowrap;
+  overflow-x: auto;
+  margin-bottom: -4vh;
+}
+.page6 .p6-elem-1 h1,
+.page6 .p6-elem-2 h1 {
+  text-transform: uppercase;
+  font-size: 7vw;
+  font-weight: 400;
+  -webkit-text-stroke: 1px white;
+  color: transparent;
+  display: inline-block;
+  animation: page6Anim 14s infinite linear;
+}
+.page6 .p6-elem-2 h1 {
+  animation-direction: reverse;
+}
+.page6 .p6-elem-1 h1 span,
+.page6 .p6-elem-2 h1 span {
+  font-family: "Silk Serif";
+  -webkit-text-stroke: 1px white;
+  color: transparent;
+}
+@keyframes page6Anim {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translate(-100%);
+  }
+}
