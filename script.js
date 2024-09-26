@@ -26,7 +26,6 @@ function locomotive() {
 locomotive();
 
 function gsapLoaderAnim() {
-  const styleTag = document.getElementById("scrollbarStyle");
   var tl = gsap.timeline();
 
   tl.from(
@@ -155,7 +154,7 @@ function gsapLoaderAnim() {
             display: "block",
           });
         }
-      }, 0);
+      }, 20);
     },
   });
 }
@@ -198,6 +197,31 @@ function cursorAnim() {
 }
 cursorAnim();
 
+function flagAnim() {
+  let flag = document.querySelector(".page1 #flag");
+
+  let wdText = document.querySelectorAll(".wd-text");
+  wdText.forEach((elm) => {
+    elm.addEventListener("mousemove", updateCursorPosition);
+
+    function updateCursorPosition(dets) {
+      let flagWidth = flag.offsetWidth / 2;
+      let flagHeight = flag.offsetHeight / 2;
+      gsap.to(flag, {
+        x: dets.x - flagWidth,
+        y: dets.y - flagHeight,
+        opacity: 1,
+      });
+    }
+    elm.addEventListener("mouseleave", function () {
+      gsap.to(flag, {
+        opacity: 0,
+      });
+    });
+  });
+}
+flagAnim();
+
 function videoAnim() {
   let video = document.querySelector(".page2 .video-container video");
   let image = document.querySelector(".page2 .video-container img");
@@ -223,6 +247,24 @@ function videoAnim() {
 }
 videoAnim();
 
+// function videoCursorAnim() {
+//   let crsr = document.querySelector("#crsr");
+//   let videoContainer = document.querySelector(".video-container");
+//   let playBtn = document.querySelector(".play-btn");
+
+//   videoContainer.addEventListener("mousemove", updateCursorPosition);
+//   videoContainer.addEventListener("scroll", updateCursorPosition);
+
+//   function updateCursorPosition(dets) {
+//     gsap.to(playBtn, {
+//       duration: 0,
+//       left: dets.x - 560,
+//       top: dets.y - 280,
+//     });
+//   }
+// }
+// videoCursorAnim();
+
 function circleBtn() {
   let page4Btn = document.querySelector(".page4 .btn");
   page4Btn.addEventListener("mouseenter", function () {
@@ -239,6 +281,54 @@ function circleBtn() {
   });
 }
 circleBtn();
+
+function circleHoverAnim() {
+  let circleHover = document.querySelectorAll(
+    ".page3 .image-effect-container .content .container .c1-circle-container .c1-circle"
+  );
+
+  circleHover.forEach((circle, index) => {
+    let animatedCircle = circle.querySelector(".c1-circle-after-hover");
+    let circleTextAnim = circle.querySelector(".c1-circle-after-hover .text");
+    let svgNone = circle.querySelector("svg");
+
+    circle.addEventListener("mouseenter", function () {
+      gsap.to(animatedCircle, {
+        height: "100%",
+        width: "100%",
+        display: "block",
+        backgroundColor: "white",
+        duration: 0.3,
+        display: "flex",
+      });
+      gsap.to(circleTextAnim, {
+        display: "block",
+        delay: 0.3,
+        scale: 1,
+      });
+      gsap.to(svgNone, {
+        delay: -0.3,
+        display: "none",
+      });
+    });
+
+    circle.addEventListener("mouseleave", function () {
+      gsap.to(animatedCircle, {
+        height: "0%",
+        width: "0%",
+        duration: 0.3,
+        display: "none",
+      });
+      gsap.to(circleTextAnim, {
+        scale: 0,
+      });
+      gsap.to(svgNone, {
+        display: "block",
+      });
+    });
+  });
+}
+circleHoverAnim();
 
 // function sheryImageEffect() {
 //   Shery.imageEffect(".image-effect1", {
